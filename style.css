@@ -78,6 +78,7 @@ img,video{max-width:100%;display:block}
 }
 .card .tag{font-size:10px;letter-spacing:1px;opacity:.9;position:relative;z-index:2;color:#fff}
 .card .title{font-size:15px;font-weight:600;margin-top:6px;position:relative;z-index:2;color:#fff}
+.card .desc{font-size:12px;line-height:1.5;margin-top:6px;position:relative;z-index:2;color:rgba(255,255,255,.75);display:block}
 
 /* --- trust logo strip --- */
 .trust{padding:30px 6vw;border-bottom:1px solid var(--line)}
