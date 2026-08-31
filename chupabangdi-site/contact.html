@@ -43,18 +43,20 @@
 
 <section class="section-tight" style="padding-top:10px">
   <div class="contact-grid">
-    <form>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none"><label>남기지 마세요<input name="bot-field"></label></p>
       <div class="form-field">
         <label>이름</label>
-        <input type="text" placeholder="이름을 입력해주세요">
+        <input type="text" name="name" required placeholder="이름을 입력해주세요">
       </div>
       <div class="form-field">
         <label>이메일</label>
-        <input type="email" placeholder="답변받으실 이메일 주소">
+        <input type="email" name="email" required placeholder="답변받으실 이메일 주소">
       </div>
       <div class="form-field">
         <label>문의 내용</label>
-        <textarea placeholder="문의하실 내용을 자유롭게 작성해주세요"></textarea>
+        <textarea name="message" placeholder="문의하실 내용을 자유롭게 작성해주세요"></textarea>
       </div>
       <button type="submit" class="btn btn-solid">문의 보내기</button>
     </form>
@@ -62,9 +64,8 @@
     <div>
       <div class="eyebrow">INFO</div>
       <div class="info-list">
-        <div><strong>이메일</strong>contact@chupabangdi.com</div>
-        <div><strong>인스타그램</strong>@chupabangdi</div>
-        <div><strong>주소</strong>추후 입력</div>
+        <div><strong>이메일</strong>chupabangdi@gmail.com</div>
+        <div><strong>전화번호</strong>0505-6741-785</div>
       </div>
     </div>
   </div>
@@ -72,7 +73,7 @@
 
 <footer class="footer">
   <span>© 2026 CHUPABANGDI STUDIO. All Rights Reserved.</span>
-  <span>contact@chupabangdi.com</span>
+  <span>info@chupabangdi.com</span>
 </footer>
 
 <script src="script.js"></script>
