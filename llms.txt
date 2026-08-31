@@ -1,0 +1,16 @@
+# 츄파방디 스튜디오 (Chupabangdi Studio)
+
+> 브랜드, 중소기업, 광고대행사를 위한 콘텐츠 제작 스튜디오입니다. 유튜브 콘텐츠, 바이럴 광고, 소셜 콘텐츠(릴스), 사진 촬영을 기획부터 촬영, 편집, 납품까지 원스톱으로 제공합니다.
+
+## 페이지
+
+- [홈](https://www.chupabangdi.com/): 서비스 소개와 대표 프로젝트
+- [프로젝트](https://www.chupabangdi.com/project/): 유튜브·바이럴·소셜·사진 포트폴리오
+- [서비스](https://www.chupabangdi.com/service/): 서비스별 설명과 작업 프로세스, 견적 안내
+- [어바웃](https://www.chupabangdi.com/about/): 브랜드 소개
+- [FAQ](https://www.chupabangdi.com/faq/): 비용, 제작 기간, 수정 횟수, 저작권 등 자주 묻는 질문
+- [문의하기](https://www.chupabangdi.com/contact/): 프로젝트 문의 및 무료 상담 신청
+
+## 연락처
+
+- 이메일: contact@chupabangdi.com
