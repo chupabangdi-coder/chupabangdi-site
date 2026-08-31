@@ -23,30 +23,22 @@
 
 <div class="intro-stage">
 
-  <!--
-    대표 영상이 준비되면 아래 intro-placeholder 블록을 지우고
-    이 video 태그의 주석을 해제한 뒤 src만 실제 파일로 바꾸면 됩니다.
-    영상 위/화면 전체가 그대로 클릭 영역(enter-link)이라 별도 작업 없이
-    "영상 클릭 → 메인 페이지 이동"이 그대로 동작합니다.
-
-    <video class="intro-video" autoplay muted loop playsinline poster="assets/intro-poster.jpg">
-      <source src="assets/intro-reel.mp4" type="video/mp4">
-    </video>
-  -->
-
-  <div class="intro-placeholder">
-    <div class="note">대표 영상이 들어갈 자리입니다 (assets/intro-reel.mp4 로 교체)</div>
-  </div>
+  <video class="intro-video" id="introVideo" autoplay muted playsinline poster="assets/intro-poster.jpg">
+    <source src="assets/intro-reel.mp4" type="video/mp4">
+  </video>
 
   <div class="intro-center">
     <svg viewBox="0 0 679 133"><path fill="#E8B27F" d="M 0,12 L 0,22 L 30,76 L 48,100 L 62,112 L 81,123 L 113,132 L 140,132 L 165,126 L 190,113 L 211,93 L 214,93 L 237,114 L 258,125 L 285,132 L 313,132 L 335,127 L 359,115 L 383,94 L 393,80 L 398,82 L 408,100 L 422,115 L 436,124 L 461,132 L 493,130 L 509,124 L 531,109 L 541,118 L 557,127 L 576,132 L 599,132 L 622,125 L 639,114 L 655,95 L 678,53 L 677,43 L 670,34 L 665,32 L 651,34 L 641,47 L 623,79 L 608,92 L 597,96 L 578,96 L 565,91 L 555,83 L 543,64 L 534,59 L 526,59 L 517,64 L 509,78 L 493,92 L 482,96 L 463,96 L 447,89 L 434,75 L 416,44 L 416,39 L 425,24 L 425,11 L 418,2 L 403,0 L 393,8 L 359,67 L 344,82 L 320,94 L 286,96 L 265,89 L 242,71 L 223,43 L 210,40 L 199,46 L 185,69 L 166,86 L 140,96 L 114,96 L 89,87 L 69,70 L 32,7 L 27,2 L 12,0 L 6,3 Z"/></svg>
     <div class="name">CHUPABANGDI</div>
     <div class="sub">STUDIO</div>
+
+    <div class="intro-cta" id="introCta">
+      <div class="intro-cta-sub">브랜드와 한 걸음 더 깊이, 같은 곳을 향해</div>
+      <a class="btn btn-solid" href="home.html">츄파방디 홈페이지 들어가기</a>
+    </div>
   </div>
 
-  <div class="intro-hint"><span class="dot"></span>클릭해서 입장하기</div>
-
-  <a class="enter-link" href="home.html" aria-label="메인 페이지로 이동"></a>
+  <a class="enter-link" id="enterLink" href="home.html" aria-label="메인 페이지로 이동"></a>
 </div>
 
 <script>
@@ -54,6 +46,18 @@
     e.stopPropagation();
     window.location.href = 'home.html';
   });
+
+  var introVideo = document.getElementById('introVideo');
+  var introCta = document.getElementById('introCta');
+  var enterLink = document.getElementById('enterLink');
+  var introStage = document.querySelector('.intro-stage');
+  if (introVideo) {
+    introVideo.addEventListener('ended', function () {
+      if (introCta) introCta.classList.add('show');
+      if (enterLink) enterLink.classList.add('enabled');
+      if (introStage) introStage.classList.add('dim');
+    });
+  }
 </script>
 </body>
 </html>

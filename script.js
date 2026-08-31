@@ -46,6 +46,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // project filter tabs (전체/유튜브/바이럴/소셜/사진) — only runs on project.html
+  var filterTags = document.getElementById('filterTags');
+  var grid = document.getElementById('portfolioGrid');
+  var emptyMsg = document.getElementById('emptyMsg');
+  if (filterTags && grid) {
+    var cards = grid.querySelectorAll('.card');
+    filterTags.querySelectorAll('.tag-pill').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        filterTags.querySelectorAll('.tag-pill').forEach(function (p) {
+          p.classList.remove('active');
+        });
+        pill.classList.add('active');
+        var filter = pill.getAttribute('data-filter');
+        var visibleCount = 0;
+        cards.forEach(function (card) {
+          var match = filter === 'all' || card.getAttribute('data-category') === filter;
+          card.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+        if (emptyMsg) emptyMsg.style.display = visibleCount === 0 ? '' : 'none';
+      });
+    });
+  }
+
   // side-index scroll spy (only runs when both exist, e.g. home.html)
   var dots = document.querySelectorAll('.side-index a');
   var sections = document.querySelectorAll('[data-section]');
