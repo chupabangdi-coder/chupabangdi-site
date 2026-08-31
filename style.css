@@ -311,6 +311,20 @@ img,video{max-width:100%;display:block}
   .nav-toggle{display:flex}
   .hero-tag-vert{display:none}
   .marquee{margin:32px 0}
+
+  /* mobile hero: stop force-cropping the (landscape) video into a tall
+     overlay box — show it at its own 16:9 ratio in full, then place the
+     title/description below it in normal flow so neither the video nor
+     the text ever gets clipped */
+  .hero-video{
+    display:block;height:auto;aspect-ratio:auto;min-height:0;max-height:none;overflow:visible;
+  }
+  .hero-video .frame{
+    position:relative;inset:auto;aspect-ratio:16/9;width:100%;
+  }
+  .hero-video .frame video{opacity:1}
+  .hero-video .reel-tag,.hero-video .hero-scroll{display:none}
+  .hero-content{padding:28px 6vw 34px}
 }
 
 @media (max-width:480px){
