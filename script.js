@@ -46,10 +46,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // project filter tabs (전체/유튜브/바이럴/소셜/사진) — only runs on project.html
+  // project filter tabs (전체/홍보영상/유튜브/SNS/행사/사진) — only runs on project.html
+  // "사진" is special-cased: instead of filtering the flat video grid, it
+  // shows a separate section where photos are grouped by category.
   var filterTags = document.getElementById('filterTags');
   var grid = document.getElementById('portfolioGrid');
   var emptyMsg = document.getElementById('emptyMsg');
+  var photoSection = document.getElementById('photoSection');
   if (filterTags && grid) {
     var cards = grid.querySelectorAll('.card');
     filterTags.querySelectorAll('.tag-pill').forEach(function (pill) {
@@ -59,6 +62,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         pill.classList.add('active');
         var filter = pill.getAttribute('data-filter');
+
+        if (filter === '사진') {
+          grid.style.display = 'none';
+          if (emptyMsg) emptyMsg.style.display = 'none';
+          if (photoSection) photoSection.style.display = '';
+          return;
+        }
+        if (photoSection) photoSection.style.display = 'none';
+        grid.style.display = '';
+
         var visibleCount = 0;
         cards.forEach(function (card) {
           var match = filter === 'all' || card.getAttribute('data-category') === filter;
