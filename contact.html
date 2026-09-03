@@ -58,7 +58,7 @@
 
 <section class="section-tight" style="padding-top:10px">
   <div class="contact-grid">
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
       <input type="hidden" name="form-name" value="contact">
       <p style="display:none"><label>남기지 마세요<input name="bot-field"></label></p>
       <div class="form-field">
@@ -68,6 +68,10 @@
       <div class="form-field">
         <label>이메일</label>
         <input type="email" name="email" required placeholder="답변받으실 이메일 주소">
+      </div>
+      <div class="form-field">
+        <label>전화번호</label>
+        <input type="text" name="phone" placeholder="연락받으실 전화번호">
       </div>
       <div class="form-field">
         <label>문의 내용</label>
